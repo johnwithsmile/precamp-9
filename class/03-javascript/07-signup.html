@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>이벤트 감지</title>
+    <script>
+        function qqq(){
+            const email = document.getElementById("email").value
+            //email = 아래의 email의 값으로 선언
+            const password1 = document.getElementById("password1").value
+            //email = 아래의 password1의 값으로 선언
+            const password2 = document.getElementById("password2").value
+            //email = 아래의 password2의 값으로 선언
+
+
+            if(email !=="" && password1 !=="" && password2 !==""){
+
+                document.getElementById("myButton").setAttribute('style', 'background-color: yellow;')
+                //버튼의 색을 노란색으로 변경하기!!
+                document.getElementById("myButton").removeAttribute('disabled')
+                //비활성화 취소 disabled는 removeAttribut를 써야함
+            
+            }
+            else{
+
+                document.getElementById("myButton").setAttribute('style', 'background-color: none;')
+                //칸이 비어있을 경우 칸을 흰색으로 변경하기!
+                document.getElementById("myButton").setAttribute('disabled', 'true')
+                //버튼 비활성화, 
+            }
+
+        }
+
+
+    </script>
+</head>
+<body>
+    <input id="email" type="text" placeholder="이메일을 입력해 주세요!" onchange=""oninput="qqq()"> <br>
+    <input id="password1" type="password" placeholder="비밀번호를 입력해 주세요!" onchange=""oninput="qqq()"> <br>
+    <input id= "password2" type="password" placeholder="비밀번호를 다시 입력해 주세요!" oninput="qqq()"> <br>  
+    <button id="myButton" disabled>회원가입</button>
+
+</body>
+</html>
